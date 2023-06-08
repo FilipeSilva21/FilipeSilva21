@@ -1,0 +1,67 @@
+package ucsal;
+import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
+
+public class BaseDados {
+
+	private Exame exame1;
+
+	public List<ProfissionalSaude> obtemProfissionalSaude(){
+	List<ProfissionalSaude> profissionaisSaude = new ArrayList<>();
+    ProfissionalSaude profissionalSaude1;
+    
+	profissionalSaude1 = new ProfissionalSaude(0, null, 0, null, null);
+        profissionalSaude1.setId(1);
+        profissionalSaude1.setNome("");
+        profissionalSaude1.setTipo("");
+        profissionalSaude1.setEspecialidade("Ouvido");
+        profissionalSaude1.setDataCadastro(new Date());
+        profissionalSaude1.setStatus(true);
+        profissionaisSaude.add(profissionalSaude1);
+
+        return profissionaisSaude;
+    }
+	
+	public List<Paciente> obtemPaciente(){
+		List<Paciente> paciente = new ArrayList<>();
+	    Paciente paciente1;
+	    
+	    paciente1 = new Paciente(0, null, 0, null, null, null, null, 0);
+	    	paciente1.setId(1);
+	        paciente1.setNome("");
+	        paciente1.setContato(0);
+	        paciente1.setRua("");
+	        paciente1.setBairro("");
+	        paciente1.setCidade("");
+	        paciente1.setEstado("");
+	        paciente1.setCep(0);
+	        paciente1.setDataCadastro(new Date());
+	        paciente1.setStatus(true);
+	        paciente.add(paciente1);
+
+	        return paciente;
+	    }
+	
+	public List<Exame> obtemExame(){
+		List<Exame> exame = new ArrayList<>();
+		exame1 = null;
+	    
+		exame1 = new Exame(0, null, 0, null, null, null, null, 0);
+			exame1.setId(1);
+			exame1.setNome("");
+	        exame1.setDescricao("");
+	        exame1.setObservacao("");
+	        exame1.setCategoria("");
+	        exame1.setDataCadastro(new Date());
+	        exame1.setStatus(true);
+	        exame.add(exame1);
+
+	        return exame;
+	
+	        
+	}
+
+
+}
+	
