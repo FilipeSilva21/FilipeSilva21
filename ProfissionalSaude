@@ -1,0 +1,47 @@
+package ucsal;
+
+import Ucsal1.Pessoa;
+
+public class ProfissionalSaude extends Pessoa{
+    private String  Tipo;
+    private String Especialidade;
+    private int QtdAtendimentos;
+
+    public ProfissionalSaude(int id, String nome, int contato, String Tipo, String Especialidade) {
+        super(id, nome, contato);
+        this.Tipo = Tipo;
+        this.Especialidade = Especialidade;
+    }
+
+
+    public String getTipo() {
+        return Tipo;
+    }
+    public void setTipo(String tipo) {
+        Tipo = tipo;
+    }
+
+
+
+    public String getEspecialidade() {
+        return Especialidade;
+    }
+    public void setEspecialidade(String especialidade) {
+        Especialidade = especialidade;
+    }
+
+
+	public int getQtdAtendimentos() {
+		return QtdAtendimentos;
+	}
+	public void setQtdAtendimentos(int qtdAtendimentos) {
+		QtdAtendimentos = qtdAtendimentos;
+	}
+
+
+	
+	}
+
+
+
+    
