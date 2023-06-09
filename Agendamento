@@ -1,137 +1,102 @@
 package ucsal;
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 
-import Ucsal1.Paciente;
-import Ucsal1.ProfissionalSaude;
+public class BaseDados {
 
-public class Agendamento {
+	private Exame exame1;
+	private Agendamento agendamento1;
+	private Prontuario prontuario1;
 
- private int Id;
- private Paciente paciente;
- private String especialidade;
- private ProfissionalSaude profissionalSaude;
- private String Convenio;
- private String TipoAtendimento;
- private String Local;
- private Date DataAtendimento;
- private String Situacao;
- private boolean status;
- 
- 
- 
- 
- //Construtor
- public Agendamento(
-  int Id,
-  Paciente paciente,
-  String especialidade,
-  ProfissionalSaude profissionalSaude,
-  String Convenio,
-  String TipoAtendimento,
-  String convenioOuParticular,
-  Date DataAtendimento,
-  String Local,
-  String Situacao) {
- 
- this.Id = Id;
- this.paciente = paciente;
- this.profissionalSaude = profissionalSaude;
- this.Convenio = Convenio;
- this.TipoAtendimento = TipoAtendimento;
- this.Local = Local;
- this.DataAtendimento = DataAtendimento;
- this.Situacao = Situacao;
- 
- }
+	public List<ProfissionalSaude> obtemProfissionalSaude(){
+	List<ProfissionalSaude> profissionaisSaude = new ArrayList<>();
+    ProfissionalSaude profissionalSaude1;
+    
+	profissionalSaude1 = new ProfissionalSaude(0, null, 0, null, null);
+        profissionalSaude1.setId(1);
+        profissionalSaude1.setNome("");
+        profissionalSaude1.setTipo("");
+        profissionalSaude1.setEspecialidade("");
+        profissionalSaude1.setDataCadastro(new Date());
+        profissionalSaude1.setStatus(true);
+        profissionaisSaude.add(profissionalSaude1);
 
+        return profissionaisSaude;
+    }
+	
+public List<Paciente> obtemPaciente(){
+	List<Paciente> paciente = new ArrayList<>();
+    Paciente paciente1;
+    
+    paciente1 = new Paciente(0, null, 0, null, null, null, null, 0);
+    	paciente1.setId(1);
+        paciente1.setNome("");
+        paciente1.setContato(0);
+        paciente1.setRua("");
+        paciente1.setBairro("");
+        paciente1.setCidade("");
+        paciente1.setEstado("");
+        paciente1.setCep(0);
+        paciente1.setDataCadastro(new Date());
+        paciente1.setStatus(true);
+        paciente.add(paciente1);
 
+        return paciente;
+    }
+	
+public List<Exame> obtemExame(){
+	List<Exame> exame = new ArrayList<>();
+	exame1 = null;
+    
+	exame1 = new Exame(0, null, 0, null, null, null, null, 0);
+		exame1.setId(1);
+		exame1.setNome("");
+        exame1.setDescricao("");
+        exame1.setObservacao("");
+        exame1.setCategoria("");
+        exame1.setDataCadastro(new Date());
+        exame1.setStatus(true);
+        exame.add(exame1);
 
- //Getters and Setters
- public int getId() {
-  return Id;
- }
- public void setId(int id) {
-  Id = id;
- }
-
-
-
- public Paciente getPaciente() {
-  return paciente;
- }
- public void setPaciente(Paciente paciente) {
-  this.paciente = paciente;
- }
-
-
-
- public String getEspecialidade() {
-  return especialidade;
- }
- public void setEspecialidade(String especialidade) {
-  this.especialidade = especialidade;
- }
-
-
-
- public ProfissionalSaude getProfissionalSaude() {
-  return profissionalSaude;
- }
- public void setProfissionalSaude(ProfissionalSaude profissionalSaude) {
-  this.profissionalSaude = profissionalSaude;
- }
-
-
-
- public String getConvenio() {
-  return Convenio;
- }
- public void setConvenio(String convenio) {
-  Convenio = convenio;
- }
-
-
-
- public String getTipoAtendimento() {
-  return TipoAtendimento;
- }
- public void setTipoAtendimento(String tipoAtendimento) {
-  TipoAtendimento = tipoAtendimento;
- }
-
-
-
- public String getLocal() {
-  return Local;
- }
- public void setLocal(String local) {
-  Local = local;
- }
-
-
-
- public Date getDataAtendimento() {
-  return DataAtendimento;
- }
- public void setDataAtendimento(Date dataAtendimento) {
-  DataAtendimento = dataAtendimento;
- }
-
-
-
- public String getSituacao() {
-  return Situacao;
- }
- public void setSituacao(String situacao) {
-  Situacao = situacao;
- }
-
-
-
-public boolean isStatus() {
-	return status;
+        return exame; 
 }
-public void setStatus(boolean status) {
-	this.status = status;
+
+public List<Agendamento> obtemAgendamento(){
+	List<Agendamento> agendamento = new ArrayList<>();
+	agendamento1 = null;
+    
+	agendamento1 = new Agendamento(0, null, null, null, null, null, null, null, null, null);
+	agendamento1.setId(1);
+	agendamento1.setPaciente(null);
+	agendamento1.setProfissionalSaude(null);
+	agendamento1.setDataAtendimento(new Date());
+	agendamento1.setTipoAtendimento("");
+	agendamento1.setLocal("");
+	agendamento1.setStatus(true);
+	agendamento.add(agendamento1);
+
+	    return agendamento;
 	}
+
+public List<Prontuario> obtemProntuario(){
+	List<Prontuario> prontuario = new ArrayList<>();
+	prontuario1 = null;
+    
+	prontuario1 = new Prontuario(0, null, null, null, null, null, null);
+	prontuario1.setId(1);
+	prontuario1.setPaciente(null);
+	prontuario1.setProfissionalDeSaude(null);
+	prontuario1.setDescricaoAtendimento("");
+	prontuario1.setTratamentoSugerido("");
+	prontuario1.setExamesSolicitados(null);
+	prontuario1.setObservacoes("");
+	prontuario1.setDataDoCadastro(new Date());
+	prontuario1.setStatus(true);
+	prontuario.add(prontuario1);
+
+	    return prontuario;
+	}
+
 }
+	
