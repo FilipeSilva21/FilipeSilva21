@@ -1,6 +1,5 @@
 package ucsal;
 
-import Ucsal1.Pessoa;
 
 public class ProfissionalSaude extends Pessoa{
     private String  Tipo;
